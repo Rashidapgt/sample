@@ -9,9 +9,7 @@ const orderRoute=require('./src/routes/orderroute')
 const productRoute=require('./src/routes/productroute')
 const userRoute=require('./src/routes/userroute')
 connectDB()
-app.get('/',(req,res)=>{
-    res.send("Hello from backend")
-})
+
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors(
@@ -22,6 +20,10 @@ app.use(cors(
       allowedHeaders:['Content-Type','Authorization']
     }
 ))
+
+app.get('/',(req,res)=>{
+    res.send("Hello from backend")
+})
 app.use('/api/admin',adminRoute)
 app.use('/api/order',orderRoute)
 app.use('/api/product',productRoute)
