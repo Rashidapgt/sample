@@ -32,7 +32,7 @@ app.get('/',(req,res)=>{
 })
 
 const PORT=process.env.PORT||2000
-/*app.listen(PORT,()=>{
+app.listen(PORT,()=>{
     console.log(`listening at port ${PORT}`)
-})*/
-module.exports=app
+})
+
