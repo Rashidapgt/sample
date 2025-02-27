@@ -21,9 +21,7 @@ app.use(cors(
     }
 ))
 
-app.get('/',(req,res)=>{
-    res.send("Hello from backend")
-})
+
 app.use('/api/admin',adminRoute)
 app.use('/api/order',orderRoute)
 app.use('/api/product',productRoute)
