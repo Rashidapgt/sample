@@ -20,17 +20,14 @@ app.use(cors(
       allowedHeaders:['Content-Type','Authorization']
     }
 ))
-
+app.get('/',(req,res)=>{
+    res.send("Hello from backend")
+})
 
 app.use('/api/admin',adminRoute)
 app.use('/api/order',orderRoute)
 app.use('/api/product',productRoute)
 app.use('/api/user',userRoute)
-
-app.get('/',(req,res)=>{
-    res.send("Hello from backend")
-})
-
 const PORT=process.env.PORT||2000
 app.listen(PORT,()=>{
     console.log(`listening at port ${PORT}`)
